@@ -1,0 +1,70 @@
+:root {
+  font-family: 'Manrope', sans-serif !important;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #222;
+  background-color: #ffffff;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* länkar */
+a {
+  font-weight: 500;
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #005fa3;
+}
+
+/* body */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #222;
+  display: block;
+}
+/* card */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e2e2;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Ta bort dark mode helt */
+@media (prefers-color-scheme: light) {
+}
+
+/* body, html, * {
+  font-family: 'Inter', sans-serif !important;
+} */
+
+button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #fff;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #f2f2f2;
+}

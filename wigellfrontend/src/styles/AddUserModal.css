@@ -1,0 +1,109 @@
+/* ========== Shared modal overlay ========== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* ========== Main modal box ========== */
+.modal {
+  background: #ffffff;
+  padding: 25px;
+  width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ========== Title ========== */
+.modal h2 {
+  margin-top: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 12px;
+}
+
+/* ========== Form rows & labels ========== */
+.modal label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+/* ========== Inputs ========== */
+.modal input,
+.modal select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #c9c9c9;
+  background: #ffffff !important;
+  color: #222;
+  outline: none;
+  width: 90%;
+  transition: 0.2s;
+}
+
+.modal input:focus,
+.modal select:focus {
+  border-color: #3a7afe;
+  box-shadow: 0 0 0 2px rgba(58, 122, 254, 0.2);
+}
+
+.modal select {
+  margin-top: 0px;
+  width: 96%;
+}
+
+/* ========== ACTION BUTTONS (equal size) ========== */
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  align-items: stretch;
+}
+
+.modal-actions button {
+  flex: 1;
+  height: 44px; /* exact same height */
+  padding: 0;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease;
+}
+
+/* Submit / Save */
+.modal-actions button[type='submit'] {
+  background: #3a7afe;
+  border: none;
+  color: #fff;
+}
+
+.modal-actions button[type='submit']:hover {
+  background: #2f63d4;
+}
+
+/* Cancel */
+.modal-actions button[type='button'] {
+  background: #ffffff;
+  border: 1px solid #ccc;
+  color: #444;
+}
+
+.modal-actions button[type='button']:hover {
+  background: #f2f2f2;
+  border-color: #999;
+}

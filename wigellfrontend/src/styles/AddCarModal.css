@@ -1,0 +1,121 @@
+/* ===== Modal overlay ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* ===== Modal box ===== */
+.addcar-modal {
+  background: #ffffff;
+  padding: 25px;
+  width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===== Header ===== */
+.addcar-modal h2 {
+  margin-top: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 12px;
+}
+
+/* ===== Form rows ===== */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* MATCHAR ADD USER */
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  font-size: 14px;
+  color: #333;
+}
+
+/* ===== Inputs (UNIVERSAL INPUT STYLE) ===== */
+.form-row input,
+.form-row select {
+  width: 95%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc; /* EXAKT samma som Add User */
+  background: #ffffff !important;
+  color: #222;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+  border-color: #3a7afe;
+  box-shadow: 0 0 0 2px rgba(58, 122, 254, 0.15); /* SNYGG BLUE GLOW */
+}
+
+/* File input gets the same style */
+.form-row input[type='file'] {
+  padding: 8px;
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  color: #222;
+  width: 96%;
+}
+
+/* ===== Action buttons ===== */
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  align-items: stretch;
+}
+
+.save-btn,
+.cancel-btn {
+  flex: 1;
+  height: 44px; /* EXAKT samma höjd */
+  padding: 0;
+  display: flex; /* perfekt centering */
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* Save button */
+.save-btn {
+  background: #3a7afe;
+  color: white;
+  border: none;
+}
+
+.save-btn:hover {
+  background: #2f63d4;
+}
+
+/* Cancel button */
+.cancel-btn {
+  background: #ffffff;
+  border: 1px solid #ccc;
+  color: #444;
+}
+
+.cancel-btn:hover {
+  background: #f2f2f2;
+  border-color: #999;
+}

@@ -1,0 +1,119 @@
+/* Wrapper overlay  */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal box  */
+.edit-car-modal {
+  background: #ffffff;
+  padding: 25px;
+  width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Header */
+.edit-car-modal h2 {
+  margin-top: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 12px;
+}
+
+/* Form row */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Inputs */
+.form-row input,
+.form-row select {
+  width: 94%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  background: #ffffff !important;
+  color: #222;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+  border-color: #3a7afe;
+  box-shadow: 0 0 0 2px rgba(58, 122, 254, 0.15);
+}
+
+/* Checkbox row */
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: -4px;
+}
+
+.checkbox-row input {
+  width: auto;
+}
+
+/* Action buttons */
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.save-btn,
+.cancel-btn {
+  flex: 1;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.save-btn {
+  background: #3a7afe;
+  color: white;
+  border: none;
+}
+
+.save-btn:hover {
+  background: #2f63d4;
+}
+
+.cancel-btn {
+  background: #ffffff;
+  border: 1px solid #ccc;
+  color: #444;
+}
+
+.cancel-btn:hover {
+  background: #f2f2f2;
+  border-color: #999;
+}

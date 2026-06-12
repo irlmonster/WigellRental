@@ -1,0 +1,19 @@
+# Hemligheter – får ALDRIG till GitHub
+.env
+
+# Beroenden – installeras från package.json, ska inte versionshanteras
+node_modules/
+
+# Byggartefakter – genereras vid bygge
+dist/
+build/
+target/
+
+# Databasens datavolym (om den någon gång hamnar som mapp lokalt)
+db_data/
+
+# OS- och editor-skräp
+.DS_Store
+*.swp
+.vscode/
+.idea/

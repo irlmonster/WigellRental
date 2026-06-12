@@ -1,0 +1,59 @@
+services:
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: rental
+    volumes:
+      - ./database.sql:/docker-entrypoint-initdb.d/database.sql:ro
+      - db_data:/var/lib/mysql
+    networks:
+      - internal_app
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  backend:
+    build: ./koncernensBackend/carRentalBackend
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - internal_app
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+  frontend:
+    build: ./wigellfrontend
+    ports:
+      - "8090:8080"
+    depends_on:
+      - backend
+    networks:
+      - internal_app
+      - public
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+networks:
+  public:
+    name: public
+  internal_app:
+    name: internal_app
+
+volumes:
+  db_data:

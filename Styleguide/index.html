@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wigell Styleguide</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mobile.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <h1>Wigellkoncernen – Styleguide</h1>
+      <p>
+        Denna styleguide dokumenterar det faktiska UI-systemet som används i
+        WigellRentals och ska fungera som referens vid vidareutveckling.
+      </p>
+    </header>
+
+    <!-- APP LAYOUT -->
+    <div class="layout">
+      <!-- SIDEBAR / NAV -->
+      <aside class="sidebar">
+        <nav class="layout-nav">
+          <ul>
+            <li><a href="#" data-target="typografi">Typografi</a></li>
+            <li><a href="#" data-target="colors">Färgschema</a></li>
+            <li><a href="#" data-target="buttons">Knappar</a></li>
+            <li><a href="#" data-target="tables">Tabeller</a></li>
+            <li><a href="#" data-target="forms">Formulär</a></li>
+            <li><a href="#" data-target="messages">Meddelanden</a></li>
+            <li><a href="#" data-target="panels">Paneler / Kort</a></li>
+            <li><a href="#" data-target="navigation">Navigation</a></li>
+            <li><a href="#" data-target="loader">Laddning</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main">
+        <!-- TYPOGRAFI -->
+        <section data-view="typografi">
+          <h2>Typografi</h2>
+
+          <p>
+            WigellRentals använder typsnittet <strong>Manrope</strong> för all
+            text i applikationen. Rubriker och brödtext ska användas konsekvent
+            för att skapa tydlig hierarki och god läsbarhet.
+          </p>
+
+          <h3>Typsnitt</h3>
+          <p>
+            Typsnittet laddas in via Google Fonts och används globalt i hela
+            applikationen.
+          </p>
+
+          <pre><code>
+&lt;link
+  href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet"
+/&gt;
+  </code></pre>
+
+          <h3>Global typografi (CSS)</h3>
+          <pre><code>
+:root {
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #222;
+  background-color: #ffffff;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+  </code></pre>
+
+          <h3>Rubriker</h3>
+
+          <h1>H1 – Sidrubrik</h1>
+          <p>Används för sidans huvudsakliga rubrik.</p>
+
+          <h2>H2 – Sektion</h2>
+          <p>Används för större innehållssektioner.</p>
+
+          <h3>H3 – Underrubrik</h3>
+          <p>Används för att dela upp innehåll inom en sektion.</p>
+
+          <h4>H4 – Mindre rubrik</h4>
+          <p>Används för mindre rubriker eller informationsblock.</p>
+
+          <h3>Brödtext</h3>
+          <p>
+            Detta är ett exempel på brödtext i Wigells designsystem. Brödtext
+            ska vara lättläst och användas för längre textstycken.
+          </p>
+
+          <h3>Rubrik- och textstorlekar (CSS)</h3>
+          <pre><code>
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #555;
+}
+  </code></pre>
+        </section>
+
+        <!-- FÄRGER -->
+        <section data-view="colors">
+          <h2>Färgschema</h2>
+
+          <p>
+            WigellRentals använder ett begränsat och konsekvent färgschema
+            baserat på CSS-variabler. Färgerna används för att skapa tydlig
+            visuell hierarki, signalera status och säkerställa en enhetlig
+            design i hela applikationen.
+          </p>
+
+          <h3>Primära färger</h3>
+          <div class="color-grid">
+            <div class="color-box primary">Primär<br />#0077cc</div>
+            <div class="color-box secondary">Sekundär<br />#ffffff</div>
+          </div>
+
+          <p>
+            Den primära färgen används för navigering, länkar och
+            funktionsknappar. Sekundär färg används som bakgrund, neutrala ytor
+            och knappar.
+          </p>
+
+          <h3>Statusfärger</h3>
+          <div class="color-grid">
+            <div class="color-box positive">Positiv<br />#2ecc71</div>
+            <div class="color-box negative">Negativ<br />#e74c3c</div>
+          </div>
+
+          <p>
+            Statusfärger används för att signalera positiva eller negativa
+            händelser, till exempel vid efitering eller radering.
+          </p>
+
+          <h3>CSS-variabler</h3>
+          <pre><code>
+:root {
+  --primary: #0077cc;
+  --primary-hover: #005fa3;
+
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --info: #0077cc;
+
+  --bg: #ffffff;
+  --card-bg: #ffffff;
+
+  --border: #e2e2e2;
+  --border-dark: #ccc;
+
+  --text: #222;
+  --text-muted: #555;
+}
+  </code></pre>
+
+        </section>
+
+        <!-- KNAPPAR -->
+        <section data-view="buttons">
+          <h2>Knappar</h2>
+
+          <p>
+            WigellRentals använder ett konsekvent knappsystem för att tydligt
+            visa olika typer av åtgärder. Knappar delas upp i standardknappar,
+            funktionsknappar samt positiva och negativa åtgärder.
+          </p>
+
+          <h3>Exempel</h3>
+          <button class="btn">Standard</button>
+          <button class="btn btn-function">Skriv ut</button>
+          <button class="btn btn-positive">Spara</button>
+          <button class="btn btn-negative">Ta bort</button>
+
+          <h3>JSX-struktur / HTML</h3>
+          <pre><code>
+&lt;button class="btn"&gt;Standard&lt;/button&gt;
+&lt;button class="btn btn-function"&gt;Skriv ut&lt;/button&gt;
+&lt;button class="btn btn-positive"&gt;Spara&lt;/button&gt;
+&lt;button class="btn btn-negative"&gt;Ta bort&lt;/button&gt;
+</code></pre>
+
+          <h3>Grundläggande knappstil (CSS)</h3>
+          <pre><code>
+button,
+.btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  transition: 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+  background: #f2f2f2;
+}
+  </code></pre>
+
+          <h3>Funktionsknappar</h3>
+
+          <pre><code>
+.btn-function {
+  background-color: #0077cc;
+  color: #ffffff;
+}
+
+.btn-function:hover {
+  background-color: #005fa3;
+}
+  </code></pre>
+
+          <h3>Positiva och negativa åtgärder</h3>
+
+          <pre><code>
+.btn-positive {
+  background: #2ecc71;
+  border-color: #2ecc71;
+  color: #0d4d3f;
+}
+
+.btn-negative {
+  background: #e74c3c;
+  border-color: #e74c3c;
+  color: #0d4d3f;
+}
+  </code></pre>
+
+          <h3>CSS – Action-knappar</h3>
+          <pre><code>
+.action-btn {
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.2s ease;
+}
+
+.edit-btn {
+  background: #38d6a7;
+  color: #0d4d3f;
+}
+
+.edit-btn:hover {
+  background: #2bbd92;
+}
+
+.return-btn {
+  border: 1px solid #ccc;
+  background: #ffffff;
+}
+
+.return-btn:hover {
+  background: #f2f2f2;
+}
+
+.delete-btn {
+  background: #ff7a7a;
+  color: #0d4d3f;
+}
+
+.delete-btn:hover {
+  background: #e86666;
+}
+  </code></pre>
+        </section>
+
+        <!-- TABELLER -->
+        <section data-view="tables">
+          <h2>Tabeller</h2>
+          <p>
+            Tabeller används i WigellRentals för att visa administrativa listor,
+            exempelvis bokningar, användare och bilar. Två huvudtyper används:
+            tabeller för längre listor samt tabeller med många kolumner.
+          </p>
+
+          <h3>Lång lista</h3>
+          <table class="table table-list">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Namn</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Bokning A</td>
+                <td>Aktiv</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Bokning B</td>
+                <td>Avslutad</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Många kolumner</h3>
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>Car</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+          </table>
+          <br />
+<h3>JSX-struktur</h3>
+          <pre><code>
+&lt;table class="admin-table"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;ID&lt;/th&gt;
+      &lt;th&gt;Namn&lt;/th&gt;
+      &lt;th&gt;Status&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr class="row-even"&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Bokning A&lt;/td&gt;
+      &lt;td&gt;Aktiv&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr class="row-odd"&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;Bokning B&lt;/td&gt;
+      &lt;td&gt;Avslutad&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+  </code></pre>
+
+          <h3>Många kolumner</h3>
+          <p>
+            Tabeller med många kolumner används i admin-vyer där flera attribut
+            behöver visas samtidigt.
+          </p>
+
+          <pre><code>
+&lt;table class="admin-table"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;ID&lt;/th&gt;
+      &lt;th&gt;User ID&lt;/th&gt;
+      &lt;th&gt;Användarnamn&lt;/th&gt;
+      &lt;th&gt;Bil&lt;/th&gt;
+      &lt;th&gt;Från&lt;/th&gt;
+      &lt;th&gt;Till&lt;/th&gt;
+      &lt;th&gt;Aktiv&lt;/th&gt;
+      &lt;th&gt;Alternativ&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+&lt;/table&gt;
+  </code></pre>
+
+          <h3>CSS – Tabellstil</h3>
+          <pre><code>
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  background: #ffffff;
+  color: #222;
+  font-size: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.admin-table th {
+  padding: 14px 18px;
+  background: #f5f6fa;
+  font-weight: 600;
+  border-bottom: 2px solid #ececec;
+  cursor: pointer;
+}
+
+.admin-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #efefef;
+}
+
+.row-even {
+  background: #ffffff;
+}
+
+.row-odd {
+  background: #fafafa;
+}
+
+.admin-table tr:hover {
+  background: #f0f4ff;
+}
+  </code></pre>
+
+          <h3>Action-knappar i tabeller</h3>
+          <p>
+            Action-knappar används i tabeller för redigering, återställning och
+            borttagning av poster.
+          </p>
+
+          <pre><code>
+&lt;button class="edit-btn"&gt;Redigera&lt;/button&gt;
+&lt;button class="return-btn"&gt;Returnera&lt;/button&gt;
+&lt;button class="delete-btn"&gt;Ta bort&lt;/button&gt;
+  </code></pre>
+        </section>
+
+        <!-- FORMULÄR -->
+        <section data-view="forms">
+          <h2>Formulär</h2>
+
+          <p>
+            Formulär används i WigellRentals för inloggning, registrering och
+            administrativa åtgärder. Samtliga formulär följer samma visuella
+            struktur med tydliga etiketter, luft mellan fält och tydliga
+            åtgärdsknappar.
+          </p>
+
+          <h3>Struktur</h3>
+          <p>
+            Formulär placeras oftast i ett kort (card) för att tydligt avgränsa
+            innehållet från resten av sidan.
+          </p>
+          <div class="form-wrapper">
+            <div class="card form-card">
+              <h3>Logga in</h3>
+
+              <form class="form">
+                <label>Användarnamn</label>
+                <input type="text" placeholder="Användarnamn" />
+
+                <label>Lösenord</label>
+                <input type="password" placeholder="Lösenord" />
+
+                <label class="checkbox-label">
+                  <input type="checkbox" />
+                  Kom ihåg mig
+                </label>
+
+                <button class="btn btn-function">Logga in</button>
+              </form>
+            </div>
+          </div>
+
+          <h3>JSX-struktur</h3>
+          <pre><code>
+&lt;div className="register-wrapper"&gt;
+  &lt;div className="card register-box"&gt;
+    &lt;h2&gt;Skapa konto&lt;/h2&gt;
+
+    &lt;form&gt;
+      &lt;label&gt;Förnamn&lt;/label&gt;
+      &lt;input /&gt;
+
+      &lt;label&gt;Efternamn&lt;/label&gt;
+      &lt;input /&gt;
+
+      &lt;label&gt;Användarnamn&lt;/label&gt;
+      &lt;input /&gt;
+
+      &lt;label&gt;Email&lt;/label&gt;
+      &lt;input type="email" /&gt;
+
+      &lt;label&gt;Lösenord&lt;/label&gt;
+      &lt;input type="password" /&gt;
+
+      &lt;button className="register-btn"&gt;
+        Skapa konto
+      &lt;/button&gt;
+
+      &lt;button className="register-cancel-btn"&gt;
+        Avbryt
+      &lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  </code></pre>
+
+          <h3>CSS – Layout & formulär</h3>
+          <pre><code>
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.register-box {
+  width: 380px;
+  padding: 30px;
+}
+
+.register-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.register-box label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+}
+  </code></pre>
+
+          <h3>CSS – Inputfält</h3>
+          <pre><code>
+.register-box input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #c9c9c9;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.register-box input:focus {
+  border-color: #3a7afe;
+  box-shadow: 0 0 0 2px rgba(58, 122, 254, 0.2);
+}
+  </code></pre>
+
+          <h3>CSS – Knappar i formulär</h3>
+          <pre><code>
+.register-btn {
+  padding: 12px;
+  background: #3a7afe;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.register-btn:hover {
+  background: #2f63d4;
+}
+
+.register-cancel-btn {
+  background: #ffffff;
+  border: 1px solid #ccc;
+  color: #444;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.register-cancel-btn:hover {
+  background: #f2f2f2;
+}
+  </code></pre>
+        </section>
+
+        <!-- MEDDELANDEN -->
+        <section data-view="messages">
+          <h2>Meddelanden</h2>
+
+          <p>
+            WigellRentals använder webbläsarens inbyggda JavaScript-alerts för
+            att visa felmeddelanden och bekräftelser vid kritiska åtgärder.
+          </p>
+
+          <h3>Alert</h3>
+          <button
+            class="btn btn-negative"
+            onclick="alert('Ett fel uppstod vid åtgärden')"
+          >
+            Visa alert
+          </button>
+
+          <h3>Confirm</h3>
+          <button
+            class="btn btn-function"
+            onclick="confirm('Är du säker på att du vill ta bort bokningen?')"
+          >
+            Visa confirm
+          </button>
+
+          <pre><code>alert('Ett fel uppstod');  
+confirm('Är du säker?');</code></pre>
+        </section>
+
+        <!-- PANELER -->
+        <section data-view="panels">
+          <h2>Kort / Cards</h2>
+
+          <p>
+            Cards används i WigellRentals för att presentera information.
+            Komponenten visar tex. bilinformation, bild och en åtgärdsknapp.
+          </p>
+
+          <!-- VISUELL REFERENS -->
+          <h3>Utseende</h3>
+          <img
+            src="CarCard.png"
+            alt="Exempel på CarCard i WigellRentals"
+            class="styleguide-image"
+          />
+
+          <!-- JSX-STRUKTUR -->
+          <h3>JSX-struktur</h3>
+          <pre><code>
+&lt;div className="card car-card"&gt;
+  &lt;h2&gt;{car.name}&lt;/h2&gt;
+  &lt;p&gt;Typ: {car.type}&lt;/p&gt;
+  &lt;p&gt;Modell: {car.model}&lt;/p&gt;
+  &lt;p&gt;Pris per dag: {car.price} kr&lt;/p&gt;
+  &lt;p&gt;
+    Totalt pris: &lt;b&gt;{totalPrice} kr&lt;/b&gt;
+    ({totalDays} dagar)
+  &lt;/p&gt;
+
+  {car.image && (
+    &lt;img
+      src={`data:image/jpeg;base64,${car.image}`}
+      alt={car.name}
+    /&gt;
+  )}
+
+  &lt;button className="book-btn"&gt;
+    Boka
+  &lt;/button&gt;
+&lt;/div&gt;
+  </code></pre>
+
+          <!-- CSS -->
+          <h3>CSS</h3>
+          <pre><code>
+.car-card {
+  width: 380px;
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.car-card:hover {
+  transform: translateY(-12px);
+}
+
+.book-btn {
+  background: #3a7afe;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 16px;
+}
+  </code></pre>
+        </section>
+
+<!-- LOADER -->
+<section data-view="loader">
+  <h2>Laddningsindikator</h2>
+
+  <p>
+    Laddningsindikatorn används i WigellRentals för att visa att data
+    hämtas eller att en åtgärd pågår.
+  </p>
+
+  <h3>Utseende</h3>
+  <div class="loader"></div>
+
+  <h3>HTML</h3>
+  <pre><code>&lt;div class="loader"&gt;&lt;/div&gt;</code></pre>
+
+  <h3>CSS</h3>
+  <pre><code>
+.loader {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 4px solid #ddd;
+  border-top: 4px solid var(--primary);
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+  </code></pre>
+</section>
+
+        <!-- NAVIGATION -->
+        <section data-view="navigation">
+  <h2>Navigation</h2>
+
+  <p>
+    WigellRentals använder en vertikal navigation i vänsterspalten.
+    Navigationen visar olika länkar beroende på om användaren är inloggad
+    samt om användaren har administratörsbehörighet.
+  </p>
+
+  <h3>Utseende</h3>
+
+  <div class="nav-demo layout-nav">
+    <ul>
+      <li><a href="#">Hem</a></li>
+      <li><a href="#">Våra bilar</a></li>
+
+      <li><a href="#">Bokningar</a></li>
+      <li><a href="#">Boka en bil</a></li>
+      <li><a href="#">Min Profil</a></li>
+
+      <li><a href="#">Admin – Användare</a></li>
+      <li><a href="#">Admin – Bilar</a></li>
+      <li><a href="#">Admin – Bokningar</a></li>
+    </ul>
+  </div>
+
+  <h3>JSX-struktur</h3>
+  <pre><code>
+&lt;nav className="nav-container"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;Link to="/"&gt;Hem&lt;/Link&gt;
+    &lt;/li&gt;
+
+    &lt;li&gt;
+      &lt;Link to="/cars"&gt;Våra bilar&lt;/Link&gt;
+    &lt;/li&gt;
+
+    {isLoggedIn && (
+      &lt;&gt;
+        &lt;li&gt;&lt;Link to="/bookings"&gt;Bokningar&lt;/Link&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;Link to="/bookcar"&gt;Boka en bil&lt;/Link&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;Link to="/userprofile"&gt;Min Profil&lt;/Link&gt;&lt;/li&gt;
+      &lt;/&gt;
+    )}
+
+    {isAdmin && (
+      &lt;&gt;
+        &lt;li&gt;&lt;Link to="/admin/users"&gt;Admin – Användare&lt;/Link&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;Link to="/admin/cars"&gt;Admin – Bilar&lt;/Link&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;Link to="/admin/bookings"&gt;Admin – Bokningar&lt;/Link&gt;&lt;/li&gt;
+      &lt;/&gt;
+    )}
+  &lt;/ul&gt;
+&lt;/nav&gt;
+  </code></pre>
+
+  <h3>CSS – Navigation</h3>
+  <pre><code>
+.layout-nav {
+  padding: 20px 10px;
+  border-right: 1px solid #e0e0e0;
+  background-color: white;
+}
+
+.layout-nav ul {
+  list-style: none;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.layout-nav li {
+  margin: 14px 0;
+  transition: transform 0.25s ease;
+}
+
+.layout-nav li:hover {
+  transform: translateX(6px);
+}
+
+.layout-nav a {
+  position: relative;
+  display: inline-block;
+  padding: 3px 0;
+  text-decoration: none;
+  color: #313131;
+  font-weight: 500;
+}
+
+.layout-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  width: 0;
+  background: #000;
+  transition: width 0.25s ease;
+}
+
+.layout-nav a:hover::after {
+  width: 100%;
+}
+  </code></pre>
+
+
+  <h3>CSS – Hover-effekt</h3>
+<pre><code>
+.layout-nav a::after {
+  width: 0;
+  transition: width 0.25s ease;
+}
+
+.layout-nav a:hover::after {
+  width: 100%;
+}
+</code></pre>
+</section>
+
+
+      </main>
+
+      <!-- RIGHT SIDEBAR -->
+      <aside class="aside">
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>Wigellkoncernen – Styleguide</p>
+    </footer>
+
+    <!-- JS import -->
+<script src="app.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,29 @@
+/* ===== Whole page ===== */
+.bookcar-page {
+  padding: 20px;
+}
+
+/* Calendar wrapper */
+.datepicker-wrapper {
+  margin-bottom: 20px;
+}
+
+/* Info text */
+.bookcar-info-text {
+  font-size: 15px;
+  color: #444;
+}
+
+/* Results section */
+.car-results {
+  margin-top: 20px;
+}
+
+/* Layout for CarCard */
+.car-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  margin-top: 20px;
+}

@@ -1,0 +1,65 @@
+.car-card {
+  width: 380px; /* Smalt kort */
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: 0.2s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.car-card h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.car-card p,
+.car-card li {
+  color: #444;
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.car-card ul {
+  padding-left: 18px;
+  margin-bottom: 10px;
+}
+
+.car-card img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Boka-knapp */
+.book-btn {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: 0;
+
+  background: #3a7afe;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.book-btn:hover {
+  background: #2f63d4;
+}

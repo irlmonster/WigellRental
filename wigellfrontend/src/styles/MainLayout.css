@@ -1,0 +1,237 @@
+/* ===========================================
+   GLOBAL LAYOUT GRID
+   =========================================== */
+
+.layout-container {
+  display: grid;
+  grid-template-rows: 90px auto;
+  grid-template-columns: 260px auto 260px;
+  height: 100vh;
+  background: #f5f5f5;
+  color: #222;
+  overflow: visible; /* IMPORTANT FIX */
+}
+
+/* ===========================================
+   HEADER
+   =========================================== */
+
+.layout-header {
+  grid-column: 1 / 4;
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+}
+
+.layout-header img {
+  height: 65px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ===========================================
+   NAVIGATION (LEFT SIDEBAR)
+   =========================================== */
+
+.layout-nav {
+  padding: 20px 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-right: 1px solid #e0e0e0;
+  background-color: white;
+}
+
+/* Nav list */
+.layout-nav ul {
+  list-style: none;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.layout-nav li {
+  margin: 14px 0;
+  transition: transform 0.25s ease;
+}
+
+.layout-nav li:hover {
+  transform: translateX(6px);
+}
+
+/* Links */
+.layout-nav a {
+  position: relative;
+  display: inline-block;
+  padding: 3px 0;
+  text-decoration: none;
+  color: #313131;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+/* Underline animation */
+.layout-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  width: 0;
+  background: #000;
+  transition: width 0.25s ease;
+}
+
+.layout-nav a:hover {
+  color: #000;
+}
+
+.layout-nav a:hover::after {
+  width: 100%;
+}
+
+/* ===========================================
+   CONTENT AREA (MIDDLE)
+   =========================================== */
+
+.layout-content {
+  background: #fafafa;
+  padding: 30px;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Watermark */
+.layout-content::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/KoncernLogga.png');
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.layout-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================================
+   ANIMATIONS
+   =========================================== */
+
+/* Page content animation */
+.page-anim {
+  animation: fadeSlide 0.45s ease;
+  animation-fill-mode: backwards;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-fade {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-fade {
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Navigation fade */
+.nav-fade {
+  animation: navFade 0.5s ease;
+  animation-fill-mode: backwards;
+}
+
+@keyframes navFade {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Header fade */
+.header-fade {
+  animation: headerFade 0.5s ease;
+  animation-fill-mode: backwards;
+}
+
+@keyframes headerFade {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ads fade */
+.ads-fade {
+  animation: adsFade 0.5s ease;
+  animation-fill-mode: backwards;
+}
+
+@keyframes adsFade {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===========================================
+   RIGHT SIDEBAR (ADS)
+   =========================================== */
+
+.layout-ads {
+  background: #ffffff;
+  border-left: 1px solid #e0e0e0;
+  padding: 25px;
+  text-align: center;
+}

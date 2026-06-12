@@ -1,0 +1,42 @@
+.ads-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  padding-top: 20px;
+}
+
+.ads-card {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #e0e0e0;
+  padding: 20px 18px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  transition: opacity 0.45s ease, transform 0.35s ease;
+  min-height: 120px;
+  margin-bottom: 20px;
+}
+
+.ads-card h4 {
+  margin: 0 0 8px 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.ads-card p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* FADE ANIMATIONER */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(6px);
+}

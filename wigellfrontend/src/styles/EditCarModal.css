@@ -1,0 +1,108 @@
+/* ===== Modal box ===== */
+.edit-car-modal {
+  background: #ffffff;
+  padding: 25px;
+  width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===== Header ===== */
+.edit-car-modal h2 {
+  margin-top: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 12px;
+}
+
+/* ===== Form rows ===== */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* samma spacing som AddCar & AddUser */
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  font-size: 14px;
+  color: #333;
+}
+
+/* ===== Inputs (same modern style as Add User) ===== */
+.form-row input,
+.form-row select {
+  width: 94%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc; /* ljus & clean */
+  background: #ffffff !important;
+  color: #222;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+  border-color: #3a7afe;
+  box-shadow: 0 0 0 2px rgba(58, 122, 254, 0.15);
+}
+
+/* File input matches style */
+.form-row input[type='file'] {
+  padding: 8px;
+  border: 1px solid #dcdcdc;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+/* ===== Action buttons (equal size) ===== */
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  align-items: stretch;
+}
+
+.save-btn,
+.cancel-btn {
+  flex: 1;
+  height: 44px; /* exakt samma höjd */
+  padding: 0;
+  display: flex; /* centrerad text */
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* Save button */
+.save-btn {
+  background: #3a7afe;
+  color: white;
+  border: none;
+}
+
+.save-btn:hover {
+  background: #2f63d4;
+}
+
+/* Cancel button */
+.cancel-btn {
+  background: #ffffff;
+  border: 1px solid #ccc;
+  color: #444;
+}
+
+.cancel-btn:hover {
+  background: #f2f2f2;
+  border-color: #999;
+}

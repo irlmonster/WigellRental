@@ -1,0 +1,63 @@
+/* ===== PAGE WRAPPER ===== */
+.bookings-page {
+  padding: 20px;
+}
+
+/* ===== GRID FOR BOOKINGS ===== */
+.bookings-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  margin-top: 20px;
+}
+
+/* ===== SINGLE BOOKING CARD (rensad) ===== */
+.booking-card {
+  color: #222; /* valfritt, annars tas denna bort också */
+}
+
+.booking-card:hover {
+  transform: translateY(-12px);
+}
+
+/* TITLE */
+.booking-card h3 {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 600;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ececec;
+  margin-bottom: 12px;
+}
+
+/* CAR IMAGE */
+.booking-card img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 10px;
+  margin: 10px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* STATUS TAG */
+.status-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* ACTIVE STATUS = GREEN */
+.status-active {
+  background: #c8ffe0;
+  color: #0c593c;
+  border: 1px solid #95f5ca;
+}
+
+/* INACTIVE STATUS = RED */
+.status-ended {
+  background: #ffd2d2;
+  color: #7a1b1b;
+  border: 1px solid #ffb3b3;
+}

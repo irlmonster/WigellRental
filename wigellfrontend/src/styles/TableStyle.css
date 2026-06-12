@@ -1,0 +1,95 @@
+/* ===== TABLE CONTAINER ===== */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  background: #ffffff;
+  color: #222;
+  font-size: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== HEADER ===== */
+.admin-table th {
+  cursor: pointer;
+  padding: 14px 18px; 
+  background: #f5f6fa;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #ececec;
+  transition: 0.15s ease;
+}
+
+.admin-table th:hover {
+  background: #ebedf3;
+}
+
+/* ===== CELLS ===== */
+.admin-table td {
+  padding: 14px 18px; 
+  border-bottom: 1px solid #efefef;
+}
+
+/* ===== ROW STRIPES ===== */
+.row-even {
+  background: #ffffff;
+}
+
+.row-odd {
+  background: #fafafa;
+}
+
+/* ===== ROW HOVER ===== */
+.admin-table tr:hover {
+  background: #f0f4ff;
+}
+
+/* ============================================
+   ACTION BUTTONS — NEW COLORS & STYLES
+   ============================================ */
+
+.action-btn {
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* EDIT — Mint / Teal */
+.edit-btn {
+  background: #38d6a7;
+  color: #0d4d3f;
+}
+
+.edit-btn:hover {
+  background: #2bbd92;
+}
+
+/* RETURN — Purple */
+.return-btn {
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.return-btn:hover {
+  background: #f2f2f2;
+}
+
+/* 🗑 DELETE — Soft Coral */
+.delete-btn {
+  background: #ff7a7a;
+  color: #0d4d3f;
+}
+
+.delete-btn:hover {
+  background: #e86666;
+}
