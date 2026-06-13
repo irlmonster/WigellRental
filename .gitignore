@@ -17,3 +17,8 @@ db_data/
 *.swp
 .vscode/
 .idea/
+
+# Cloudflared – hemligheter får ALDRIG till GitHub
+*.pem
+6716c245-f69c-4f5c-86bf-c6d9d03c586d.json
+cert.pem

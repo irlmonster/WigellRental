@@ -1,0 +1,7 @@
+tunnel: 6716c245-f69c-4f5c-86bf-c6d9d03c586d
+credentials-file: /etc/cloudflared/6716c245-f69c-4f5c-86bf-c6d9d03c586d.json
+
+ingress:
+  - hostname: rental.kson.nu
+    service: http://localhost:8090
+  - service: http_status:404
