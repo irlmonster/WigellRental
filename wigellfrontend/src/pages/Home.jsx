@@ -10,7 +10,7 @@ export default function Home() {
           textAlign: 'center',
         }}
       >
-        <h1>Välkommen till Wigell Biluthyrning</h1>
+        <h1>Välkommen till Wigell Biluthyrning!</h1>
 
         <p>
           För fem år sedan hände något historiskt. Inte lika stort som när

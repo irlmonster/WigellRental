@@ -20,7 +20,7 @@ services:
       start_period: 30s
 
   backend:
-    build: ./koncernensBackend/carRentalBackend
+    image: ghcr.io/irlmonster/wigell-backend:latest
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     depends_on:
@@ -33,9 +33,11 @@ services:
       - no-new-privileges:true
     cap_drop:
       - ALL
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
 
   frontend:
-    build: ./wigellfrontend
+    image: ghcr.io/irlmonster/wigell-frontend:latest
     ports:
       - "8090:8080"
     depends_on:
@@ -48,6 +50,17 @@ services:
       - no-new-privileges:true
     cap_drop:
       - ALL
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+
+  watchtower:
+    image: nickfedor/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 300 --label-enable --cleanup
+    networks:
+      - internal_app
+    restart: unless-stopped
 
 networks:
   public:
